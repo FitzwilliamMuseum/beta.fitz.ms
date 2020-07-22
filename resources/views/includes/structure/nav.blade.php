@@ -39,6 +39,7 @@
       Objects and art works</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/') }}">An introduction</a>
+        <a class="dropdown-item" href="{{ URL('https://collection.beta.fitz.ms') }}">Search the collection</a>
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/highlights/') }}">Collection highlights</a>
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/audio-guide/') }}">Audio guide</a>
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/image-library/') }}">Image library</a>

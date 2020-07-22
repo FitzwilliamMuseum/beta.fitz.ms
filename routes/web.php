@@ -50,11 +50,16 @@ Route::get('exhibitions/future', 'exhibitionsController@future');
 Route::get('exhibitions/{slug}', 'exhibitionsController@details');
 Route::get('objects-and-artworks/highlights', 'highlightsController@index');
 Route::get('objects-and-artworks/', 'highlightsController@landing');
+Route::get('objects-and-artworks/highlights/context/', 'highlightsController@contextual');
 Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@details');
 Route::match(array('GET','POST'),'objects-and-artworks/highlights/search/results/', 'highlightsController@results');
-Route::get('objects-and-artworks/highlights/{section}/{slug}/', 'highlightsController@associate');
+
+
+Route::get('objects-and-artworks/highlights/context/{section}/', 'highlightsController@pharosSections');
+Route::get('objects-and-artworks/highlights/context/{section}/{slug}/', 'highlightsController@associate');
 Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide');
 Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop');
+
 Route::get('search', 'searchController@index');
 Route::get('search/staff', 'searchController@staff');
 Route::get('search/news', 'searchController@news');

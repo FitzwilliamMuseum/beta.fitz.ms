@@ -105,22 +105,23 @@ class homeController extends Controller
       $videoList = Youtube::listChannelVideos('UCFwhw5uPJWb4wVEU3Y2nScg', 3, 'date');
       Cache::put('cache_yt', $videoList, $expiresYouTube); // 1 hour
     }
-    if (Cache::has('cache_insta')) {
-      $insta = Cache::get('cache_insta');
-    } else {
-      $instagram = Instagram::withCredentials(
-        env('INSTAGRAM_USER'),
-       env('INSTAGRAM_PASS'),
-       new Psr16Adapter('Files')
-     );
-      $instagram->login();
-      $insta = $instagram->getMedias('fitzmuseum_uk', 3);
-      Cache::put('cache_insta', $insta, $expiresInstagram); // 1 hour
-    }
+    // if (Cache::has('cache_insta')) {
+    //   $insta = Cache::get('cache_insta');
+    // } else {
+    //   $instagram = Instagram::withCredentials(
+    //     env('INSTAGRAM_USER'),
+    //    env('INSTAGRAM_PASS'),
+    //    new Psr16Adapter('Files')
+    //  );
+    //   $instagram->login();
+    //   $insta = $instagram->getMedias('fitzmuseum_uk', 3);
+    //   Cache::put('cache_insta', $insta, $expiresInstagram); // 1 hour
+    // }
     return view('index', compact(
       'carousel','news', 'research',
       'objects','tweets', 'videoList',
-      'things', 'insta'
+      'things',
+      // 'insta'
     ));
   }
 }

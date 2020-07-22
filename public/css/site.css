@@ -697,3 +697,7 @@ img.img-fluid.twitter {
 .carousel-caption {
   position: static !important;
 }
+
+.pagination, .breadcrumb {
+  background-color: #fff !important;
+}

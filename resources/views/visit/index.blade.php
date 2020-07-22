@@ -1,5 +1,5 @@
 @extends('layouts/visitus')
-@section('title', 'Visiting us')
+@section('title', 'Visit us')
 @section('hero_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/founders.jpg')
 @section('hero_image_title', "The Museum's founder's building")
 @section('parallax_home', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/old_g3.jpg')
@@ -47,7 +47,7 @@
 <div class="container">
   <div class="row">
     @foreach($associated['data'] as $project)
-    <div class="col-md-6 mb-3">
+    <div class="col-md-4 mb-3">
       <div class="card card-body h-100">
         @if(!is_null($project['hero_image']))
         <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"

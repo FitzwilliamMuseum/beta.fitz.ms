@@ -32,7 +32,7 @@
   </div>
 
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-    <h2>Meta Data</h2>
+    <h3>Further information</h3>
     <ul>
       <li>Collections ID: {{$record['adlib_id']}}</li>
       @if(!is_null($record['place_of_origin']))
@@ -118,18 +118,18 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($pharosassoc['pharos_pages_id']['hero_image']))
-            <img class="img-fluid" src="{{ $pharosassoc['pharos_pages_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+            <a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}"><img class="img-fluid" src="{{ $pharosassoc['pharos_pages_id']['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $pharosassoc['pharos_pages_id']['hero_image_alt_text'] }}"
-            loading="lazy"/>
+            loading="lazy"/></a>
           @else
             <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded img-fluid"  />
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">
-              <h3><a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}">{{ $pharosassoc['pharos_pages_id']['title']}}</a></h3>
+              <h3><a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}">{{ $pharosassoc['pharos_pages_id']['title']}}</a></h3>
             </div>
           </div>
-          <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}" class="btn btn-dark">Read more</a>
+          <a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}" class="btn btn-dark">Read more</a>
         </div>
 
       </div>
